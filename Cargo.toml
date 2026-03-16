@@ -1,0 +1,36 @@
+[package]
+name = "tg_parser_api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# async Web server
+axum = "0.8"
+tokio = { version = "1", features = ["full"] }
+
+# HTTP-Client and page parsing
+reqwest = { version = "0.13", features = ["json"] }
+scraper = "0.25"
+
+# Serializing
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# Swagger
+utoipa = { version = "5.3.0", features = ["axum_extras"] }
+utoipa-swagger-ui = { version = "9.0.1", features = ["axum", "reqwest"] }
+
+# Ошибки
+thiserror = "2.0.17"
+
+# Rate Limiting
+tower_governor = "0.8.0"
+
+# Кэширование
+moka = { version = "0.12", features = ["future"] }
+
+dotenvy = "0.15"
